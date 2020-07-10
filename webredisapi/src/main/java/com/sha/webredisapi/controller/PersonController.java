@@ -21,15 +21,14 @@ public class PersonController {
 
     @GetMapping("person")
     @Cacheable(value = "person")
-    public List<Person> getAllPerson(){
-        return  personService.getAllPerson();
+    public List<Person> getAllPerson() {
+        return personService.getAllPerson();
     }
 
     @GetMapping("hello")
-    public Hello getHello(){
+    public Hello getHello() {
         return new Hello("Hello");
     }
-
 
 
 }

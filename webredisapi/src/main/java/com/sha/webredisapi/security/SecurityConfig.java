@@ -20,28 +20,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .password("sha")
             .roles("USER")
             .and()
-        .withUser("foo")
-        .password("foo")
-        .roles("ADMIN");
+            .withUser("foo")
+            .password("foo")
+            .roles("ADMIN");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers("/admin").hasRole("ADMIN")
-            .antMatchers("/user").hasAnyRole("USER","ADMIN")
+            .antMatchers("/user").hasAnyRole("USER", "ADMIN")
             .antMatchers("/").permitAll()
 
-        .and().formLogin();
+            .and().formLogin();
 
     }
 
     @Bean
-    public PasswordEncoder getPasswordEncoder(){
+    public PasswordEncoder getPasswordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-
-
 
 
 }

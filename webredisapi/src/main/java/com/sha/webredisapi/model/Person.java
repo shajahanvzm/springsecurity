@@ -27,6 +27,6 @@ public class Person implements Serializable {
     public Person(String name, String job, String address) {
         this.name = name;
         this.job = job;
-        this.address  = address;
+        this.address = address;
     }
 }

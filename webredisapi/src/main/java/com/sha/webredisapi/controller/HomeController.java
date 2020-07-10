@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
 
     @GetMapping("/")
-    private String getRoot(){
+    private String getRoot() {
         return "<h2>Welcome</h2>";
     }
 
     @GetMapping("/user")
-    private String getUser(){
+    private String getUser() {
         return "<h2>Welcome User</h2>";
     }
 
     @GetMapping("/admin")
-    private String getAdmin(){
+    private String getAdmin() {
         return "<h2>Welcome Admin</h2>";
     }
 
